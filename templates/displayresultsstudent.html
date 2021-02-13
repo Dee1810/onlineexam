@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block title %} Results {% endblock %}
+
+{% block style %} <style>
+td{
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+.column {
+    float: left;
+    width: 50%;
+  }
+  .column1{
+
+    float:right;
+    width: 45%;
+
+}
+.btn2{
+    background-color:rgba(34, 146, 109, 0.863);
+    height:90px;
+    width: 180px;
+    border: none;
+    text-align: center;
+    font-size: 22px;
+    border-radius: 6px;
+    left:300px;
+    top:300px;
+    color: aliceblue;
+    line-height: 2.5em;
+}
+th {
+  background-color: rgba(8, 35, 80, 0.863);
+  color: white;
+  text-align: center;
+  -ms-text-kashida-space:  2em;
+}
+body{
+      height: 100%;
+      width: 100%;
+      font-family:Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      padding: 50px;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  tr{
+    width: 1%;
+    white-space:nowrap;
+    background-color: aliceblue;
+    padding: 2em;
+}
+table{
+    border-collapse: collapse;
+}
+</style>{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="column">
+        <div class="container">
+
+            <h1 align="center">RESULT SHEET</h1>
+            <table  style="width: 100%;" border="3px solid rgb(39, 31, 31)" align="center">
+
+                <tr>
+                    <th>EXAM TITLE</th>
+
+                    <th>MARKS OBTAINED</th>
+                    <th>TOTAL MARKS</th>
+
+
+                </tr>
+
+
+                {% for row in results %}
+                <tr>
+                    <td>{{row[11]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[18]}}</td>
+
+
+
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div></div>
+    <div class="column1 centered">
+        <br><br><br><br>
+
+        <div align="right"><a href="/student_dashboard"> <button class="btn btn-lg btn2 btn-block" >Back</button></a></div>
+        <br><br><br><br><a href="{{url_for('logout')}}"><div align="right"> <button class="btn btn-lg btn2 btn-block" type="submit" method="GET" href="{{url_for('logout')}}">Logout</button></div></a></div>
+</div>
+</div>
+</div>
+{% endblock %}
