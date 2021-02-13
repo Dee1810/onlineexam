@@ -90,7 +90,7 @@ def setquestions():
 
             d=cursor.execute("SELECT * FROM ONLINE_EXAM")
             examid=d+1
-            print("examid"+str(examid))
+            #print("examid"+str(examid))
             cursor.execute("INSERT INTO ONLINE_EXAM(exam_title,admin_id,exam_datetime,exam_duration,total_questions,marks_for_correct,marks_for_wrong,total_marks,exam_end_datetime) VALUES (%s,%s,%s,%s,%s,%s, %s, %s,%s)", (examtitle,int(adminid),examdateandtime,examduration,int(totalqns),int(marksforcrt),int(marksforwrg),int(totalmarks),examenddateandtime,))
 
             
